@@ -3,9 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>hibernate-jpa</groupId>
-	<artifactId>hibernate-jpa</artifactId>
-	<version>1.0</version>
+	<groupId>com.alexecollins</groupId>
+	<artifactId>tutorial-hibernate-jpa</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+    <url>http://www.alexecollins.com/?q=content/tutorial-hibernate-jpa-part-1</url>
 
 	<dependencies>
 		<dependency>
@@ -38,7 +40,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>tutorial</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -49,15 +50,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<server>localhost</server>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-	<packaging>war</packaging>
 </project>

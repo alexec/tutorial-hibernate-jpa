@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="tutorialPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- the JNDI data source -->
+		<non-jta-data-source>java:comp/env/jdbc/tutorialDS</non-jta-data-source>
+		<properties>
+			<!-- if this is true, hibernate will print (to stdout) the SQL it executes, 
+				so you can check it to ensure it's not doing anything crazy -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<!-- since most database servers have slightly different versions of the 
+				SQL, Hibernate needs you to choose a dialect so it knows the subtleties of 
+				talking to that server -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<!-- this tell Hibernate to update the DDL when it starts, very useful 
+				for development, dangerous in production -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
